@@ -80,13 +80,16 @@ def process_location(update, context):
         print(element)
 
     msg = "LISTA DEI 3 TAXY PIU' VICINI: \n"
-    taxy1 = str(sorted_values[0]['id'])
-    dist1 = str(sorted_values[0]['dist'])
-    taxy2 = str(sorted_values[1]['id'])
-    dist2 = str(sorted_values[1]['dist'])
-    taxy3 = str(sorted_values[2]['id'])
-    dist3 = str(sorted_values[2]['dist'])
-    msg = msg + 'taxy: '+ taxy1 + ' distanza -> '+ dist1 +'\n'+'taxy: '+ taxy2 + ' distanza -> '+ dist2 +'\n'+'taxy: '+ taxy3 + ' distanza -> '+ dist3 +'\n'
+    if len(sorted_values) == 0:
+        msg = "Nessun taxy nelle vicinanze."
+    else:
+        taxy1 = str(sorted_values[0]['id'])
+        dist1 = str(sorted_values[0]['dist'])
+        taxy2 = str(sorted_values[1]['id'])
+        dist2 = str(sorted_values[1]['dist'])
+        taxy3 = str(sorted_values[2]['id'])
+        dist3 = str(sorted_values[2]['dist'])
+        msg = msg + 'taxy: '+ taxy1 + ' distanza -> '+ dist1 +'\n'+'taxy: '+ taxy2 + ' distanza -> '+ dist2 +'\n'+'taxy: '+ taxy3 + ' distanza -> '+ dist3 +'\n'
     print(msg)
 
     message.reply_text(msg)
