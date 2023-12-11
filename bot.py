@@ -9,10 +9,9 @@ db = firestore.Client.from_service_account_json('credentials.json')
 coll = 'sensor'
 
 def welcome(update, context):
-    msg = '''Welcome in My <b> FabianaBot <b>
-    Condividi la tua <b> posizione <b> per 
+    msg = '''Welcome in My <b> FabianaBot </b>
+    Condividi la tua <b> posizione </b> per 
     visualizzare i 3 taxy più vicini.'''
-
     update.message.reply_text(msg, parse_mode='HTML')
 
 def process_location(update, context):
@@ -27,11 +26,11 @@ def process_location(update, context):
     print(user)
     print(f"You talk with user {user['first_name']} and his user ID: {user['id']}")
 
-    msg = f'Ti trovi presso lat={user_location.latitude}&lon={user_location.longitude}'
+    #msg = f'Ti trovi presso lat={user_location.latitude}&lon={user_location.longitude}'
     lat_user = user_location.latitude
     long_user = user_location.longitude
-    print(msg)
-    message.reply_text(msg)
+    #print(msg)
+    #message.reply_text(msg)
 
     msg = 'Lista dei 3 taxy più vicini'
     chat_id = update.message.chat.id
