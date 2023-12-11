@@ -3,7 +3,7 @@ from datetime import datetime
 import time
 import json
 
-function_url = 'https://europe-west1-progetto2-407119.cloudfunctions.net/save_data'
+function_url = 'https://europe-west1-progettoesamefabianagolino.cloudfunctions.net/save_data'
 
 #taxy id, data, longitudine, latitudine
 with open('file/999.txt') as f:
