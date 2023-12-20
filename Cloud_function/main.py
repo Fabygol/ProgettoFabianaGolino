@@ -21,12 +21,9 @@ def save_data(request):
     print(msg)
     coll = 'sensor'
     db = firestore.Client()
-    doc_ref = db.collection(coll).document(msg['taxi_id']) #o taxi id
+    doc_ref = db.collection(coll).document(msg['taxi_id'])
     doc_ref.set({'taxi_id':msg['taxi_id'],'dt': msg['dt'], 'lat': msg['lat'], 'long': msg['long']})
-    #doc_ref.update({'taxi_id': msg['taxi_id'], 'dt': msg['dt'], 'lat': msg['lat'], 'long': msg['long']})
 
-    #db.collection(msg['sensor']).document(msg['time']).set({'time': msg['time'], 'value': msg['pm10']})
-    #db.collection(msg['sensor']).document(msg['dt']).set({'dt': msg['dt'], 'lat': msg['lat'], 'long': msg['long']}) #accedo ad un doc di cui so id
     # Set CORS headers for the main request
     headers = {
         'Access-Control-Allow-Origin': '*'
