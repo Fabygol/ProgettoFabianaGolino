@@ -15,8 +15,7 @@ with open('file/7715.txt') as f:
         lat = float(riga.split(',')[3])
         print({'taxi_id':taxi_id, 'dt':dt, 'long':long, 'lat':lat})
 
-        #r = post(f'{function_url}', json={'taxi_id': taxi_id, 'dt': dt, 'long': long, 'lat': lat})
-        #r = post(f'{base_url}/sensors/{taxi_id}', data={'sensor': taxi_id,'dt': dt, 'long': long, 'lat': lat})
+
         r = post(function_url,data={'data': json.dumps({'taxi_id': taxi_id, 'dt': dt, 'lat': lat, 'long': long})})
         print('sending', dt, lat, long, ' -----> ', r.status_code)
 

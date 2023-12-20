@@ -6,18 +6,4 @@ gcloud functions deploy save_data --region europe-west1 --runtime python37 --tri
 
 
 
-Per Chatbot:
-Attivare Compute Engine API
-Crea Istanza
-Specificare Nome, regione e Zona -> E2 medium
-Linux 11 (bullseye)
-Consente traffico HTTP e HTTPS
--> CREA
-Caricare i file
 
-sudo apt-get install python3-venv
-python3 -m venv venv
-ls -> per verificare che ci sia l'ambiente virtuale
-source venv/bin/activate -> attivare l'ambiente virtuale
-pip3 install -r requirements.txt
-python3 bot.py
